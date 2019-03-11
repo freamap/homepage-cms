@@ -1,6 +1,6 @@
 <template>
-  <div class="login">
-    ログインページです。
+  <div class="signin">
+    <button class="button is-primary" slot="trigger">Click me!</button>
   </div>
 </template>
 
