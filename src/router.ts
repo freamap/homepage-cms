@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Signin from './views/Signin.vue'
+import Signup from './views/Signup.vue'
+import ConfirmCode from './views/ConfirmCode.vue'
 import DashBoard from './views/DashBoard.vue'
 import Error from './views/Error.vue'
 
@@ -25,6 +27,22 @@ let router = new Router({
       path: '/signin',
       name: 'signin',
       component: Signin,
+      meta: {
+        auth: false
+      }
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: Signup,
+      meta: {
+        auth: false
+      }
+    },
+    {
+      path: '/confirmCode',
+      name: 'confirmCode',
+      component: ConfirmCode,
       meta: {
         auth: false
       }

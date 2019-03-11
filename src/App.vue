@@ -3,9 +3,10 @@
     <div v-if="!$route.meta.auth">
       ログイン前のレイアウト
       <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link> |
-        <router-link to="/dashboard">DashBoard</router-link>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/signin">ログイン</router-link>
+        <router-link to="/signup">アカウント作成</router-link>
       </div>
     </div>
     <div v-else>
