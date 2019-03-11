@@ -1,8 +1,15 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div v-if="!$route.meta.auth">
+      ログイン前のレイアウト
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link> |
+        <router-link to="/dashboard">DashBoard</router-link>
+      </div>
+    </div>
+    <div v-else>
+      ログイン後のレイアウト
     </div>
     <router-view/>
   </div>
