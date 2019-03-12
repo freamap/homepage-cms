@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "amazon-cognito-identity-js": "^3.0.9",
     "aws-sdk": "^2.418.0",
     "buefy": "^0.7.3",
     "register-service-worker": "^1.6.2",

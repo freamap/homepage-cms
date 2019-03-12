@@ -1,12 +1,31 @@
 <template>
   <div class="signin">
-    <button class="button is-primary" slot="trigger">Click me!</button>
+    <input type="text" v-model="userName">
+    <input type="text" v-model="password">
+    <button class="button is-primary" @click="clickSignip">ログイン</button>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { mapActions, Actions } from '@/store/modules/auth';
 
-@Component({})
-export default class Signin extends Vue {}
+@Component({
+  methods: {
+    ...mapActions(['signinAction'])
+  }
+})
+export default class Signin extends Vue {
+  userName: string = '';
+  password: string = '';
+
+  signinAction!: (payload: Actions["signinAction"]) => void;
+
+  clickSignip() {
+    this.signinAction({
+      userName: this.userName,
+      password: this.password,
+    })
+  }
+}
 </script>

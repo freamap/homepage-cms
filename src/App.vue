@@ -7,6 +7,7 @@
         <router-link to="/about">About</router-link>
         <router-link to="/signin">ログイン</router-link>
         <router-link to="/signup">アカウント作成</router-link>
+        <router-link to="/confirmCode">コード確認</router-link>
       </div>
     </div>
     <div v-else>
