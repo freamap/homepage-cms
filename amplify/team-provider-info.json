@@ -1,0 +1,19 @@
+{
+    "cms": {
+        "awscloudformation": {
+            "AuthRoleName": "homepage-cms-20190313024318-authRole",
+            "UnauthRoleArn": "arn:aws:iam::158480951703:role/homepage-cms-20190313024318-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::158480951703:role/homepage-cms-20190313024318-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "homepage-cms-20190313024318-deployment",
+            "UnauthRoleName": "homepage-cms-20190313024318-unauthRole",
+            "StackName": "homepage-cms-20190313024318",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:158480951703:stack/homepage-cms-20190313024318/52b1ccc0-44ee-11e9-a59f-066cec78e1f8"
+        },
+        "categories": {
+            "auth": {
+                "cognito0c80cf1c": {}
+            }
+        }
+    }
+}
