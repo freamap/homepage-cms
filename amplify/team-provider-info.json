@@ -15,5 +15,22 @@
                 "cognito0c80cf1c": {}
             }
         }
+    },
+    "cmsdev": {
+        "awscloudformation": {
+            "AuthRoleName": "homepage-cms-20190313095802-authRole",
+            "UnauthRoleArn": "arn:aws:iam::158480951703:role/homepage-cms-20190313095802-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::158480951703:role/homepage-cms-20190313095802-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "homepage-cms-20190313095802-deployment",
+            "UnauthRoleName": "homepage-cms-20190313095802-unauthRole",
+            "StackName": "homepage-cms-20190313095802",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:158480951703:stack/homepage-cms-20190313095802/0dfe2320-452b-11e9-ae8f-0e0baf7be9a4"
+        },
+        "categories": {
+            "auth": {
+                "cognito0c80cf1c": {}
+            }
+        }
     }
 }
