@@ -43,7 +43,7 @@ export interface Actions {
 }
 
 export const state: State = {
-  token: ''
+  token: 'aaaa'
 };
 
 export const getters: DefineGetters<Getters, State> = {
@@ -75,6 +75,7 @@ export const mutations: DefineMutations<Mutations, State> = {
     Auth.signIn(userName, password)
     .then((result) => { 
       console.log(result)
+      state.token = 'aaaa'
     })
     .catch((err) => {
       console.log(err);
