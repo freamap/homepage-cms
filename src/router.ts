@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { Auth } from 'aws-amplify';
 import Home from './views/Home.vue'
 import Signin from './views/Signin.vue'
 import Signup from './views/Signup.vue'
@@ -79,6 +80,7 @@ let router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  console.log(Auth.user);
   if (to.matched.some(page => !page.meta.auth) || auth.state.token) {
     next()
   } else {

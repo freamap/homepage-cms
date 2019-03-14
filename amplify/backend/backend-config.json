@@ -6,14 +6,6 @@
 		}
 	},
 	"storage": {
-		"dynamo43e826f1": {
-			"service": "DynamoDB",
-			"providerPlugin": "awscloudformation"
-		},
-		"hcPageCmsdev": {
-			"service": "DynamoDB",
-			"providerPlugin": "awscloudformation"
-		},
 		"Page": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
@@ -27,7 +19,7 @@
 			"dependsOn": [
 				{
 					"category": "storage",
-					"resourceName": "dynamo43e826f1",
+					"resourceName": "pages",
 					"attributes": [
 						"Name",
 						"Arn"

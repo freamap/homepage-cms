@@ -29,8 +29,8 @@ export const getters: DefineGetters<Getters, State> = {
 
 export const mutations: DefineMutations<Mutations, State> = {
   getPages(state) {
-    let apiName = 'api6ce98257';
-    let path = '/api'; 
+    let apiName = 'api2f23d33f';
+    let path = '/api/pages'; 
     let myInit = { // OPTIONAL
         headers: {}, // OPTIONAL
         response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
@@ -40,9 +40,11 @@ export const mutations: DefineMutations<Mutations, State> = {
     }
     API.get(apiName, path, myInit).then(response => {
         // Add your code here
+        console.log("api success")
         console.log(response)
     }).catch(error => {
-        console.log(error.response)
+      console.log("api failure")
+      console.log(error)
     });
   },
 };

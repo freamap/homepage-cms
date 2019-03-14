@@ -1,5 +1,0 @@
-{
-    "tableName": "hc-custom-contents",
-    "partitionKeyName": "uuid",
-    "partitionKeyType": "S"
-}

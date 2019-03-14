@@ -5,13 +5,13 @@
 		"env": {
 			"Type": "String"
 		},
-		"storagedynamo43e826f1Name": {
+		"storagepagesName": {
 			"Type": "String",
-			"Default": "storagedynamo43e826f1Name"
+			"Default": "storagepagesName"
 		},
-		"storagedynamo43e826f1Arn": {
+		"storagepagesArn": {
 			"Type": "String",
-			"Default": "storagedynamo43e826f1Arn"
+			"Default": "storagepagesArn"
 		}
 	},
 	"Conditions": {
@@ -68,7 +68,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "homepage-cms-20190313095802-deployment",
-					"S3Key": "amplify-builds/homepagecmsf5452f45-1552532804-latest-build.zip"
+					"S3Key": "amplify-builds/homepagecmsf5452f45-1552548349-latest-build.zip"
 				}
 			}
 		},
@@ -162,7 +162,7 @@
 							],
 							"Resource": [
 								{
-									"Ref": "storagedynamo43e826f1Arn"
+									"Ref": "storagepagesArn"
 								}
 							]
 						}
