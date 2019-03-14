@@ -1,0 +1,5 @@
+{
+    "tableName": "homepage_cms_pages",
+    "partitionKeyName": "uuid",
+    "partitionKeyType": "S"
+}
