@@ -6,7 +6,7 @@
 		}
 	},
 	"storage": {
-		"Page": {
+		"Pages": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
 		}
