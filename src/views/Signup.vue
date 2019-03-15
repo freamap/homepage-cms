@@ -3,6 +3,7 @@
     <input type="text" v-model="userName">
     <input type="text" v-model="password">
     <input type="text" v-model="email">
+    <input type="text" v-model="phoneNumber">
     <button class="button is-primary" @click="clickSignup">サインアップ</button>
   </div>
 </template>
@@ -20,13 +21,15 @@ export default class Signup extends Vue {
   userName: string = '';
   password: string = '';
   email: string = '';
+  phoneNumber: string = '';
   signupAction!: (payload: Actions["signupAction"]) => void;
 
   clickSignup() {
     this.signupAction({
       userName: this.userName,
       password: this.password,
-      email: this.email
+      email: this.email,
+      phoneNumber: this.phoneNumber
     })
   }
 }

@@ -29,7 +29,7 @@ export const getters: DefineGetters<Getters, State> = {
 
 export const mutations: DefineMutations<Mutations, State> = {
   getPages(state) {
-    let apiName = 'api2f23d33f';
+    let apiName = 'homepageCmsApi';
     let path = '/api/pages'; 
     let myInit = { // OPTIONAL
         headers: {}, // OPTIONAL

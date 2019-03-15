@@ -7,12 +7,19 @@ import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import Amplify, * as AmplifyModules from 'aws-amplify';
 import { AmplifyPlugin } from 'aws-amplify-vue'
+import { I18n } from 'aws-amplify';
+
+I18n.setLanguage('ja')
 
 const awsmobile = require('./aws-exports').default;
-Amplify.configure(awsmobile);
+Amplify.configure({
+  ...awsmobile,
+  Auth: {
+    storage: window.localStorage
+  }
+});
 
 Vue.use(AmplifyPlugin, AmplifyModules)
-
 
 Vue.config.productionTip = false
 Vue.use(Buefy)

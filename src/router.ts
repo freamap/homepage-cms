@@ -3,11 +3,12 @@ import Router from 'vue-router'
 import { Auth } from 'aws-amplify';
 import Home from './views/Home.vue'
 import Signin from './views/Signin.vue'
+import SigninMfa from './views/SigninMfa.vue'
 import Signup from './views/Signup.vue'
+import Signout from './views/Signout.vue'
 import ConfirmCode from './views/ConfirmCode.vue'
 import DashBoard from './views/DashBoard.vue'
 import Error from './views/Error.vue'
-
 import * as auth from '@/store/modules/auth.ts'
 
 Vue.use(Router)
@@ -33,6 +34,14 @@ let router = new Router({
       }
     },
     {
+      path: '/signin-mfa',
+      name: 'signin-mfa',
+      component: SigninMfa,
+      meta: {
+        auth: true
+      }
+    },
+    {
       path: '/signup',
       name: 'signup',
       component: Signup,
@@ -41,11 +50,19 @@ let router = new Router({
       }
     },
     {
+      path: '/signout',
+      name: 'signout',
+      component: Signout,
+      meta: {
+        auth: true
+      }
+    },
+    {
       path: '/confirmCode',
       name: 'confirmCode',
       component: ConfirmCode,
       meta: {
-        auth: false
+        auth: true
       }
     },
     {
@@ -79,13 +96,30 @@ let router = new Router({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  console.log(Auth.user);
-  if (to.matched.some(page => !page.meta.auth) || auth.state.token) {
-    next()
-  } else {
-    next('/signin')
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some(record => record.meta.auth)) {
+    try {
+      let user = await Auth.currentAuthenticatedUser()
+      await auth.mutations.setUser(auth.state, user)
+      if (to.path === '/confirmCode' || to.path === '/signin-mfa') {
+        return next('/dashboard')
+      }
+      return next()
+    } catch(err) {
+      if (err === 'not authenticated') {
+        if (to.path !== '/confirmCode' && to.path !== '/signin-mfa') {
+          return next('/signin?redirect=' + to.path)
+        } else {
+          if (auth.state.tempUser || auth.state.user) {
+            return next()
+          }
+          return next('/signin')
+        }
+      }
+      return next('/')
+    }
   }
+  return next()
 })
 
 export default router
