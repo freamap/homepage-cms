@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"cognito0c80cf1c": {
+		"cognito9924a324": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
@@ -29,7 +29,7 @@
 		}
 	},
 	"api": {
-		"api2f23d33f": {
+		"homepageCmsApi": {
 			"service": "API Gateway",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [

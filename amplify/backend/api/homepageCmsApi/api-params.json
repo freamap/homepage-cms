@@ -9,8 +9,8 @@
             }
         }
     ],
-    "resourceName": "api2f23d33f",
-    "apiName": "api2f23d33f",
+    "resourceName": "homepageCmsApi",
+    "apiName": "homepageCmsApi",
     "functionArns": [
         {
             "lambdaFunction": "homepagecmsf5452f45"

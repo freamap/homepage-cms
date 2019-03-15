@@ -43,13 +43,13 @@
     "Resources": {
         
         
-        "PolicyAPIGWapi2f23d33fauth": {
+        "PolicyAPIGWhomepageCmsApiauth": {
             "DependsOn": [
-              "api2f23d33f"
+              "homepageCmsApi"
             ],
             "Type": "AWS::IAM::Policy",
             "Properties": {
-              "PolicyName": "PolicyAPIGWapi2f23d33fauth",
+              "PolicyName": "PolicyAPIGWhomepageCmsApiauth",
               "Roles": [
                 {"Ref": "authRoleName"}
               ],
@@ -79,7 +79,7 @@
                             },
                             ":",
                             {
-                              "Ref": "api2f23d33f"
+                              "Ref": "homepageCmsApi"
                             },
                             "/",
                             {
@@ -110,7 +110,7 @@
                             },
                             ":",
                             {
-                              "Ref": "api2f23d33f"
+                              "Ref": "homepageCmsApi"
                             },
                             "/",
                             {
@@ -141,16 +141,16 @@
           },
         
         
-      "api2f23d33f": {
+      "homepageCmsApi": {
         "Type": "AWS::ApiGateway::RestApi",
         "Properties": {
           "Description": "",
-          "Name": "api2f23d33f",
+          "Name": "homepageCmsApi",
           "Body": {
             "swagger": "2.0",
             "info": {
               "version": "2018-05-24T17:52:00Z",
-              "title": "api2f23d33f"
+              "title": "homepageCmsApi"
             },
             "host": {
                 "Fn::Join": [
@@ -440,7 +440,7 @@
                   
         
         
-        "functionhomepagecmsf5452f45Permissionapi2f23d33f": {
+        "functionhomepagecmsf5452f45PermissionhomepageCmsApi": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
@@ -464,7 +464,7 @@
                             },
                             ":",
                             {
-                                "Ref": "api2f23d33f"
+                                "Ref": "homepageCmsApi"
                             },
                             "/*/*/*"
                         ]
@@ -475,7 +475,7 @@
         
         
         
-      "DeploymentAPIGWapi2f23d33f": {
+      "DeploymentAPIGWhomepageCmsApi": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",
@@ -489,7 +489,7 @@
             ]
           },
           "RestApiId": {
-            "Ref": "api2f23d33f"
+            "Ref": "homepageCmsApi"
           }
         }
       }
@@ -497,11 +497,11 @@
     "Outputs": {
         "RootUrl": {
             "Description": "Root URL of the API gateway",
-            "Value": {"Fn::Join": ["", ["https://", {"Ref": "api2f23d33f"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
+            "Value": {"Fn::Join": ["", ["https://", {"Ref": "homepageCmsApi"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
         },
         "ApiName": {
           "Description": "API Friendly name",
-          "Value": "api2f23d33f"
+          "Value": "homepageCmsApi"
         }
     }
   }
